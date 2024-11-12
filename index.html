@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        //console.log("hello world")
+        //Randomly generates between R/P/S
         function getComputerChoice() {
             randomNumber = Math.random();
             console.log(randomNumber)
@@ -19,8 +19,15 @@
                 console.log("Scissors")
         }
         
-        
+        //Promps and collect human answer
+        function getHumanChoice(userChoice) {
+            userChoice = prompt("Choose between rock, paper, or scissors.");
+            //console.log(userChoice)
+        }
+
+
         getComputerChoice()
+        getHumanChoice()
 
     </script>
 
