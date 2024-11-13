@@ -7,28 +7,55 @@
 </head>
 <body>
     <script>
+
+        let computerScore = 0;
+        let humanScore = 0;
+        let computerChoice = getComputerChoice()
+        let userChoice = getHumanChoice()
+
+
         //Randomly generates between R/P/S
         function getComputerChoice() {
-            randomNumber = Math.random();
+            randomNumber = Math.random()
+            let cAnswer = ""
             console.log(randomNumber)
-            if (randomNumber > (2/3))
-                console.log("Rock")
-            else if (randomNumber > (1/3))
-                console.log("Paper")
-            else
-                console.log("Scissors")
+            if (randomNumber > (2/3)){
+                cAnswer = "rock"
+                console.log("rock")
+            }
+            else if (randomNumber > (1/3)){
+                cAnswer = "paper"
+                console.log("paper")
+            }
+            else {
+                cAnswer = "scissors"
+                console.log("scissors")
+            }
+            return cAnswer
         }
         
         //Promps and collect human answer
-        function getHumanChoice(userChoice) {
-            userChoice = prompt("Choose between rock, paper, or scissors.");
-            //console.log(userChoice)
+        function getHumanChoice() {
+            //collects input from user and converts to all lowercase letters
+            answer = prompt("Choose between rock, paper, or scissors.").toLowerCase();
+            //console.log(answer + " inside function")
+            return answer
+        }
+    
+        function playRound(userChoice, computerChoice){
+            //console.log(userChoice + " playRound function")
+            //console.log(computerChoice + " playRound function")
+            if (userChoice == "rock" && computerChoice == "scissors" || userChoice == "paper" && computerChoice == "rock" || userChoice == "scissors" && computerChoice == "paper")
+            console.log("You Win!!!")
+
+            else
+            console.log("You lose")
+
         }
 
-
-        getComputerChoice()
-        getHumanChoice()
-
+        
+        playRound(userChoice, computerChoice)
+        console.log(userChoice)
     </script>
 
 </body>
