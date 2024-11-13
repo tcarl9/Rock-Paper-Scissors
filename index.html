@@ -12,6 +12,7 @@
         let humanScore = 0;
         let computerChoice = getComputerChoice()
         let userChoice = getHumanChoice()
+        const rounds = 5
 
 
         //Randomly generates between R/P/S
@@ -41,7 +42,7 @@
             //console.log(answer + " inside function")
             return answer
         }
-    
+        //Plays a single round of RPS
         function playRound(userChoice, computerChoice){
             if (userChoice == "rock" && computerChoice == "scissors" || userChoice == "paper" && computerChoice == "rock" || userChoice == "scissors" && computerChoice == "paper") {
             console.log("You Win!!!")
@@ -54,11 +55,29 @@
             return computerScore
             }
         }
-        
+
+        //try to get new choices
+        function newFunction(){
+            //I need to loop through this 4 times
+            //I need to add score to this too
+           computerChoice = getComputerChoice()
+           userChoice= getHumanChoice() 
+           console.log(computerChoice + " New function")
+           console.log(userChoice + " New function")
+           playRound(userChoice, computerChoice)
+        }
+
+        for (i=0; i < 4; i++){
+            newFunction()
+        }
+
+
         playRound(userChoice, computerChoice)
-        console.log(userChoice)
+        //newFunction()
+        //newFunction()
+        //console.log(userChoice)
         console.log("Your score: " + humanScore)
-        console.log("Computer score: " + computerScore)
+        console.log("Computer: " + computerScore)
     </script>
 
 </body>
