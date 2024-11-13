@@ -10,8 +10,8 @@
 
         let computerScore = 0;
         let humanScore = 0;
-        let computerChoice = getComputerChoice()
-        let userChoice = getHumanChoice()
+        let computerChoice = ""
+        let userChoice = ""
         const rounds = 5
 
 
@@ -19,7 +19,7 @@
         function getComputerChoice() {
             randomNumber = Math.random()
             let cAnswer = ""
-            console.log(randomNumber)
+            //console.log(randomNumber)
             if (randomNumber > (2/3)){
                 cAnswer = "rock"
                 console.log("rock")
@@ -49,6 +49,9 @@
             humanScore ++
             return humanScore
             }
+            //add else if statement here for tie, no score change
+            else if (userChoice == computerChoice)
+            console.log("Tie")
             else{
             console.log("You Lose!")
             computerScore ++
@@ -62,17 +65,17 @@
             //I need to add score to this too
            computerChoice = getComputerChoice()
            userChoice= getHumanChoice() 
-           console.log(computerChoice + " New function")
-           console.log(userChoice + " New function")
+           //console.log(computerChoice + " New function")
+           //console.log(userChoice + " New function")
            playRound(userChoice, computerChoice)
         }
 
-        for (i=0; i < 4; i++){
+        for (i=0; i < 5; i++){
             newFunction()
         }
 
 
-        playRound(userChoice, computerChoice)
+        //playRound(userChoice, computerChoice)
         //newFunction()
         //newFunction()
         //console.log(userChoice)
