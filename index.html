@@ -43,19 +43,22 @@
         }
     
         function playRound(userChoice, computerChoice){
-            //console.log(userChoice + " playRound function")
-            //console.log(computerChoice + " playRound function")
-            if (userChoice == "rock" && computerChoice == "scissors" || userChoice == "paper" && computerChoice == "rock" || userChoice == "scissors" && computerChoice == "paper")
+            if (userChoice == "rock" && computerChoice == "scissors" || userChoice == "paper" && computerChoice == "rock" || userChoice == "scissors" && computerChoice == "paper") {
             console.log("You Win!!!")
-
-            else
-            console.log("You lose")
-
+            humanScore ++
+            return humanScore
+            }
+            else{
+            console.log("You Lose!")
+            computerScore ++
+            return computerScore
+            }
         }
-
         
         playRound(userChoice, computerChoice)
         console.log(userChoice)
+        console.log("Your score: " + humanScore)
+        console.log("Computer score: " + computerScore)
     </script>
 
 </body>
