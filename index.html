@@ -19,7 +19,6 @@
         function getComputerChoice() {
             randomNumber = Math.random()
             let cAnswer = ""
-            //console.log(randomNumber)
             if (randomNumber > (2/3)){
                 cAnswer = "rock"
                 console.log("rock")
@@ -39,7 +38,6 @@
         function getHumanChoice() {
             //collects input from user and converts to all lowercase letters
             answer = prompt("Choose between rock, paper, or scissors.").toLowerCase();
-            //console.log(answer + " inside function")
             return answer
         }
         //Plays a single round of RPS
@@ -61,12 +59,8 @@
 
         //try to get new choices
         function newFunction(){
-            //I need to loop through this 4 times
-            //I need to add score to this too
            computerChoice = getComputerChoice()
            userChoice= getHumanChoice() 
-           //console.log(computerChoice + " New function")
-           //console.log(userChoice + " New function")
            playRound(userChoice, computerChoice)
         }
 
@@ -74,11 +68,6 @@
             newFunction()
         }
 
-
-        //playRound(userChoice, computerChoice)
-        //newFunction()
-        //newFunction()
-        //console.log(userChoice)
         console.log("Your score: " + humanScore)
         console.log("Computer: " + computerScore)
     </script>
